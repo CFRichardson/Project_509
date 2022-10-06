@@ -14,11 +14,11 @@ This project is a part of the ADS-509 course in the Applied Data Science Program
     - [Disclaimer](#)
 
 # Contributers:
-* Mr. Gil, Oscar
+* Gil, Oscar
     * :email: (Ogil@sandiego.edu)
-* Mr. Richardson, Christopher
+* Richardson, Christopher
     * :email: (christopherr@sandiego.edu)
-* Mr. Taghavi, Nima
+* Taghavi, Nima
     * :email: (namintaghavi@sandiego.edu)
 
 
