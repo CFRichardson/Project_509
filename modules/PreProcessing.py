@@ -10,6 +10,10 @@ import sqlite3
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+import emoji
+from nltk.stem import PorterStemmer
+from string import punctuation
+from nltk.corpus import stopwords
 
 
 class ChromeDriver():
@@ -190,3 +194,132 @@ class WebScraper():
         star_count = \
             sum([1 for star in stars_list if star.text == 'Filled Star'])
         return star_count
+
+
+class TokenCleaner():
+    def __init__(self, remove_stopwords=True, return_as_string=True):
+
+        # Some punctuation variations
+        self.punctuation = set(punctuation)  # speeds up comparison
+        self.punct_set = self.punctuation - {"#"}
+        self.punct_pattern = \
+            re.compile("[" + re.escape("".join(self.punct_set)) + "]")
+        self.stemmer = PorterStemmer()
+        # Stopwords
+        if remove_stopwords:
+            self.sw = stopwords.words("english") + ['️', '', ' ']
+        else:
+            self.sw = ''
+
+        # Two useful regex
+        self.whitespace_pattern = re.compile(r"\s+")
+        self.hashtag_pattern = re.compile(r"^#[0-9a-zA-Z]+")
+        self.CleanText_return_format = return_as_string
+
+    def CleanText(self, _text):
+        # if _text is has nothing in it then return none
+        if _text is None:
+            return ''
+
+        # decode bytes to string if necessary
+        if isinstance(_text, str):
+            self.text = _text
+        else:
+            # this is for the case of tweets which are saved as bytes
+            self.text = _text.decode("utf-8")
+
+        self.__add_space_before_and_after_emoji()
+        self.__RemovePunctuation()
+        self.__TokenizeText()
+        self.__StemEachToken()
+        self.__RemoveStopWords()
+
+        if self.CleanText_return_format:
+            return ' '.join(self.tokens)
+        else:
+            return self.tokens
+
+    def __StemEachToken(self):
+        """
+        Perform Stemming on each token (i.e. working, worked, words are all converted to working)<
+        """
+
+        self.tokens = [self.stemmer.stem(token) for token in self.tokens]
+
+    def __add_space_before_and_after_emoji(self):
+        text_section = list()
+        for i, char in enumerate(self.text):
+            if emoji.is_emoji(char):
+                text_section.append(' ' + self.text[i] + ' ')
+            else:
+                text_section.append(self.text[i])
+
+            if (ZERO_WIDTH_JOINER := '\u200d') in text_section:
+                text_section.remove(ZERO_WIDTH_JOINER)
+
+        return ''.join(text_section)
+
+    def __RemovePunctuation(self):
+        """
+        Loop through the original text and check each character,
+        if the character is a punctuation, then it is removed.
+        ---------------------------------------------------------
+        input: original text
+        output: text without punctuation
+        """
+        self.text = \
+            "".join([ch for ch in self.text if ch not in self.punct_set])
+
+        self.text = re.sub(self.punct_pattern, '', self.text)
+
+    def __TokenizeText(self):
+        """
+        Tokenize by splitting the text by white space
+        ---------------------------------------------------------
+        input: text without punctuation
+        output: A list of tokens
+        """
+        self.tokens = \
+            [item for item in self.whitespace_pattern.split(self.text)]
+
+    def __RemoveStopWords(self):
+        """
+        Tokenize by splitting the text by white space
+        ---------------------------------------------------------
+        input: text without punctuation
+        output: A list of tokens with all token as lower case
+        """
+        self.tokens = [token.lower() for token in self.tokens]
+
+        self.tokens = \
+            [token for token in self.tokens if not token in self.sw]
+
+
+def add_space_after_emoji(text):
+
+    text_section = list()
+    for i, char in enumerate(text):
+        if emoji.is_emoji(char):
+            text_section.append(' ' + text[i] + ' ')
+        else:
+            text_section.append(text[i])
+
+        if (ZERO_WIDTH_JOINER := '\u200d') in text_section:
+            text_section.remove(ZERO_WIDTH_JOINER)
+
+    return ''.join(text_section)
+
+
+def clean_string(text):
+    if pd.isnull(text):
+        return text
+
+    remove_words = stopwords.words("english") + ['️', '', ' ']
+    text = text.replace('|', ' ').replace('\n', ' ')
+
+    text = re.sub(punct_pattern, '', text)
+    text = add_space_after_emoji(text)
+    text_tokens = text.split(' ')
+    text = [word.lower() for word in text_tokens]
+    text = [word for word in text if not word in remove_words]
+    return text
