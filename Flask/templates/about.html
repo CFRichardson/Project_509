@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>About Us</title>
+</head>
+
+<body>
+<h1>ADS-509 Project</h1>
+<p>This project is a part of the ADS-509 Applied Text Mining course in the Applied Data Science Program at the University of San Diego.</p>
+
+<h2>Contributers:</h2>
+<ul>
+    <li>Gil, Oscar (<a href="mailto:ogil@sandiego.edu">ogil@sandiego.edu</a>)</li>
+    <li>Richardson, Christopher (<a href="mailto:cristopherr@sandiego.edu">cristopherr@sandiego.edu</a>)</li>
+    <li>Taghavi, Nima (<a href="mailto:namintaghavi@sandiego.edu">namintaghavi@sandiego.edu</a>)</li>
+</ul>
+
+<h2>Objective</h2>
+<p>We aim to determine whether negative comments are more helpful in determining the value of a course versus positive comments. 
+Additionally, we will assess if the sentiment of a course's corpus reflects the average score of the course.</p>
+
+<h2>Acknowledgements</h2>
+<p>Data was scraped from <a href="https://www.coursera.org/" target="_blank">Coursera.org</a> and thus would like to thank 
+Coursera.org and its founders Andrew Ng and Daphne Koller for their mission in providing life-transforming learning experiences 
+to learners around the world.</p>
+
+<h3>Disclaimer</h3>
+<ol>
+    <li>This project is strictly for educational purposes at the <a href="https://www.sandiego.edu/" target="_blank">University of San Diego</a> 
+        and nothing more.</li>
+    <li>Data utilized in this project is solely owned by <a href="https://www.coursera.org/" target="_blank">Coursera.org</a>. 
+        Coursera's Robot.txt(scrape bot policy) is available at <a href="https://www.coursera.org/robots.txt" target="_blank">coursera.org/robots.txt</a>.</li>
+</ol>
+
+<h3>Descriptive Statistics</h3>
+<p>The first image below shows the most frequently used words when combining all reviews from the seven courses that formed part of the project. 
+  The following images contain information on the top words and descriptive statistics for each of the seven courses.
+</p>
+
+</body>
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 8</div>
+    <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/MostFrequentWords.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 8</div>
+    <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course1.jpg" style="width:55%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 8</div>
+    <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course2.jpg" style="width:55%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 8</div>
+    <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course3.jpg" style="width:55%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 8</div>
+    <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course4.jpg" style="width:55%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 8</div>
+    <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course5.jpg" style="width:55%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">7 / 8</div>
+    <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course6.jpg" style="width:55%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">8 / 8</div>
+    <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course7.jpg" style="width:55%">
+  </div>
+  
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+  <!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+</div>
+
+<style>
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+</style>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<h3>For a better tomorrow!</h1>
+
+</html>
