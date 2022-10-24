@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
 <title>About Us</title>
 </head>
 
@@ -12,7 +13,7 @@
 <h2>Contributers:</h2>
 <ul>
     <li>Gil, Oscar (<a href="mailto:ogil@sandiego.edu">ogil@sandiego.edu</a>)</li>
-    <li>Richardson, Christopher (<a href="mailto:cristopherr@sandiego.edu">cristopherr@sandiego.edu</a></li>
+    <li>Richardson, Christopher (<a href="mailto:cristopherr@sandiego.edu">cristopherr@sandiego.edu</a>)</li>
     <li>Taghavi, Nima (<a href="mailto:namintaghavi@sandiego.edu">namintaghavi@sandiego.edu</a>)</li>
 </ul>
 
@@ -33,8 +34,166 @@ to learners around the world.</p>
         Coursera's Robot.txt(scrape bot policy) is available at <a href="https://www.coursera.org/robots.txt" target="_blank">coursera.org/robots.txt</a>.</li>
 </ol>
 
-<h1>For a better tomorrow!</h1>
-
 </body>
+
+<style>
+    /* body{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        overflow: hidden;
+    } */
+
+    .slide-container {
+        width: 100%;
+        height:85vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .image-slider{
+        width: 100%;
+        height: 600px;
+        position: absolute;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+    }
+    
+    .slides-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 30px;
+    }
+
+    .img{
+        position: relative;
+        width: 600px;
+        height: 370px;
+        transition: 0.5s;
+    }
+
+    .button {
+        position: absolute;
+        width: 600px;
+        height: 370px;
+        transition: 0.5s;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    #slider-span1:target ~ .image-slider #img1,
+    #slider-span1:target ~.image-slider #button-1{
+        width:600px;
+        height: 370px;
+        background-color: transparent;
+    }
+    #slider-span2:target ~ .image-slider #img2,
+    #slider-span2:target ~.image-slider #button-2{
+        width:600px;
+        height: 370px;
+        background-color: transparent;
+    }
+    #slider-span3:target ~ .image-slider #img3,
+    #slider-span3:target ~.image-slider #button-3{
+        width:600px;
+        height: 370px;
+        background-color: transparent;
+    }
+    #slider-span4:target ~ .image-slider #img4,
+    #slider-span4:target ~.image-slider #button-4{
+        width:600px;
+        height: 370px;
+        background-color: transparent;
+    }
+    #slider-span5:target ~ .image-slider #img5,
+    #slider-span5:target ~.image-slider #button-5{
+        width:600px;
+        height: 370px;
+        background-color: transparent;
+    }
+    #slider-span6:target ~ .image-slider #img6,
+    #slider-span6:target ~.image-slider #button-6{
+        width:600px;
+        height: 370px;
+        background-color: transparent;
+    }
+    #slider-span7:target ~ .image-slider #img7,
+    #slider-span7:target ~.image-slider #button-7{
+        width:600px;
+        height: 370px;
+        background-color: transparent;
+    }
+
+
+    #slider-span1:target ~.image-slider{
+        left:20%;
+    }
+    #slider-span2:target ~.image-slider{
+        left:0%;
+    }
+    #slider-span3:target ~.image-slider{
+        left:-20%;
+    }
+    #slider-span4:target ~.image-slider{
+        left:-20%;
+    }
+    #slider-span5:target ~.image-slider{
+        left:-20%;
+    }
+    #slider-span6:target ~.image-slider{
+        left:-20%;
+    }
+    #slider-span7:target ~.image-slider{
+        left:-20%;
+    }
+</style>
+</head>
+<body>
+<div class="slide-container">
+    <span class="slider-span" id="slider-span1"></span>
+    <span class="slider-span" id="slider-span2"></span>
+    <span class="slider-span" id="slider-span3"></span>
+
+    <div class="image-slider">
+        <div class="slides-div" id="slide-1">
+            <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course1.jpg" alt="" class="img" id="img1">
+            <a href="#slider-span1" class="button" id="button-1"></a>
+        </div>
+        <div class="slides-div" id="slide-2">
+            <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course2.jpg" alt="" class="img" id="img2">
+            <a href="#slider-span2" class="button" id="button-2"></a>
+        </div>
+        <div class="slides-div" id="slide-3">
+            <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course3.jpg" alt="" class="img" id="img3">
+            <a href="#slider-span3" class="button" id="button-3"></a>
+        </div>
+        <div class="slides-div" id="slide-4">
+            <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course4.jpg" alt="" class="img" id="img4">
+            <a href="#slider-span4" class="button" id="button-4"></a>
+        </div>
+        <div class="slides-div" id="slide-5">
+            <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course5.jpg" alt="" class="img" id="img5">
+            <a href="#slider-span5" class="button" id="button-5"></a>
+        </div>
+        <div class="slides-div" id="slide-6">
+            <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course6.jpg" alt="" class="img" id="img6">
+            <a href="#slider-span6" class="button" id="button-6"></a>
+        </div>
+        <div class="slides-div" id="slide-7">
+            <img src="/Users/oscargil/Desktop/509/Project_509/Flask/static/Course7.jpg" alt="" class="img" id="img7">
+            <a href="#slider-span7" class="button" id="button-7"></a>
+        </div>
+    </div>
+</div>
+</body>
+
+<h1>For a better tomorrow!</h1>
 
 </html>
