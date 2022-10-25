@@ -142,6 +142,7 @@ class WebScraper():
         """
         raise ValueError(error_message)
 
+
     @property
     def available_review_pages(self):
         soup = self.__driver.html_content
@@ -241,7 +242,7 @@ class TokenCleaner():
 
     def __StemEachToken(self):
         """
-        Perform Stemming on each token (i.e. working, worked, words are all converted to working)<
+        Perform Stemming on each token (i.e. working, worked, works are all converted to work)<
         """
 
         self.tokens = [self.stemmer.stem(token) for token in self.tokens]

@@ -1,0 +1,53 @@
+<nav class="navbar navbar-light" style="background-color: #4C7773;"> 
+  <div class="d-flex justify-content-center">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="center collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li id='page_index' ><a style="color: white;" href='/'>Home</a></li>
+        <li id='page_explore' ><a style="color: white;" href='explore'>Explore Data</a></li>
+        <li id='page_help' ><a style="color: white;" href='help'>Help/Instructions</a></li>
+        <li id='page_about' ><a style="color: white;" href='about'>About</a></li>
+        <li><a style="color: white;" href='https://github.com/nimaamintaghavi/Project_509'>Github Source Code</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    margin-bottom: 0px;
+    border: 1px solid transparent; 
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 0%;
+  }
+
+  .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
+    background-color: white;
+    color: #4C7773 !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 10px white;
+    border-radius: 10%;
+  }
+  .active{
+    font-size:1.5em !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 10px black;
+  box-shadow: -4px -3px 45px 5px rgba(0,0,0,0.35);
+  border-radius: 10%;
+  }
+
+</style>
+
+<script defer>
+  $("#page_{{request.endpoint}}").addClass("active")
+</script>
