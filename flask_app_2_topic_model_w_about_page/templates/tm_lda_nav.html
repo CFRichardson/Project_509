@@ -1,0 +1,39 @@
+<form action="" method="post">
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-3">
+      <form action="/tm_lda" method="POST">
+        <label>Min Document Frequency:</label>
+        <select id="max_df" name="chosen_min">
+          {% for minDF in min_dfs %}
+            <option value="{{ minDF }}">{{ minDF }}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="col-3">
+        <label>Max Document Frequency:</label>
+        <select id="max_df" name="chosen_max">
+          {% for maxDF in max_dfs %}
+            <option value="{{ maxDF }}">{{ maxDF }}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="col-3">
+        <label >Num compenents:</label>
+        <select id="ncomps" name="chosen_ncomps">
+          {% for ncomp in n_comps %}
+            <option value="{{ ncomp }}">{{ ncomp }}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="col-3">
+      <input type="submit">
+      <br>
+      Current Selection:<br>
+      <p>{{ current_output }}</p>
+    </div>
+  </div>
+</div>
+</form>

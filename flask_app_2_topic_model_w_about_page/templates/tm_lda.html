@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>LDA Topic Models</title>
+{% endblock %}
+
+{% block body_content %}
+  {% include 'tm_lda_nav.html' %}
+  <br>
+  <br>
+  {% set lda_render = render %}
+  {% include lda_render %}
+
+{% endblock %}
