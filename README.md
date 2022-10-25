@@ -29,14 +29,21 @@ This project is a part of the ADS-509 course in the Applied Data Science Program
 
 This repo utilizes the following packages:
 
+    * BeautifulSoup
+    * Emoji
+    * Flask
+    * NLTK
     * Numpy
     * Pandas
+    * pickle5
+    * pyLDAvis
     * Scikit-Learn
-
-  ---- more to be added ----
-
-
-
+    * Seaborn
+    * Selenium
+    * Sqlite3
+    * Spacy
+    * Spacy_fastlang
+    * Wordcloud
 
 To clone this repository onto your device, use the commands below:
 
@@ -52,7 +59,9 @@ We aim to determine whether negative comments are more helpful in determining th
 
 ## Methods Utilized:
 
-
+  * LDA (Latent )
+  * Naive Bayes
+  * Support Vector Machine
 
 # Acknowledgements
 ---------------------------
