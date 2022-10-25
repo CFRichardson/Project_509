@@ -1,7 +1,10 @@
 # ADS509_Project
 ---------------------------
+NOTE!!! For Dr. Marbut!
+Web app is split into two MVP folders, flask_app_1 which contains the homepage.  The homepage utilizes both naive bayes classifier and support vector machine to classify text reviews.  While flask_app_2 contains our Topic Model LDA page and a brief about page.
 
 This project is a part of the ADS-509 course in the Applied Data Science Program at the University of San Diego.
+
 
 -- Project Status: Active
 
@@ -29,21 +32,21 @@ This project is a part of the ADS-509 course in the Applied Data Science Program
 
 This repo utilizes the following packages:
 
-    * BeautifulSoup
-    * Emoji
-    * Flask
-    * NLTK
-    * Numpy
-    * Pandas
-    * pickle5
-    * pyLDAvis
-    * Scikit-Learn
-    * Seaborn
-    * Selenium
-    * Sqlite3
-    * Spacy
-    * Spacy_fastlang
-    * Wordcloud
+  * BeautifulSoup
+  * Emoji
+  * Flask
+  * NLTK
+  * Numpy
+  * Pandas
+  * pickle5
+  * pyLDAvis
+  * Scikit-Learn
+  * Seaborn
+  * Selenium
+  * Sqlite3
+  * Spacy
+  * Spacy_fastlang
+  * Wordcloud
 
 To clone this repository onto your device, use the commands below:
 
